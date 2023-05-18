@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>chain</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/abstract_operation_handler.js"></script>
+	<script src="./js/request.js"></script>
+	<script src="./js/add_operation_handler.js"></script>
+	<script src="./js/multiply_operation_handler.js"></script>
+	<script src="./js/substract_operation_handler.js"></script>
+	<script src="./js/divide_operation_handler.js"></script>
+	<script>
+		let chain = CALC.chain;
+	
+		let addOperationHandler = new chain.AddOperationHandler("+");
+		let substractOperationHandler = new chain.SubstractOperationHandler("-");
+		let multiplyOperationHandler = new chain.MultiplyOperationHandler("*");
+		let divideOperationHandler = new chain.DivideOperationHandler("/");
+
+		addOperationHandler.setNext(substractOperationHandler)
+				.setNext(multiplyOperationHandler)
+				.setNext(divideOperationHandler);
+
+		let requests = [ new chain.Request("100+20"), new chain.Request("100-20"),
+				new chain.Request("100*20"), new chain.Request("100/20") ];
+
+		for (let request of requests) {
+			let answer = addOperationHandler.handleRequest(request);
+			let expression = request.getExpression();
+
+			console.log(expression + " = " + answer);
+		}
+	</script>
+</body>
+</html>

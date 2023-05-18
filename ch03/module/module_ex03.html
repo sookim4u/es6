@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		function Coffee(name) {
+			
+			let price = 3000;
+			
+			this.name = name;
+			
+			this.getPrice = function() {
+				return price;
+			};
+			
+			this.raisePrice = function() {
+				price += 100;
+			};
+		}
+		
+		let coffee = new Coffee("Americano");
+		
+		console.log(coffee.name);
+		
+		console.log(coffee.getPrice());
+		
+		coffee.price = 4000;
+		console.log(coffee.getPrice());
+		
+		console.log(coffee);
+		
+		console.log(coffee.price);
+		
+		coffee.raisePrice();
+		console.log(coffee.getPrice());
+		
+		let espresso = new Coffee("Espresso");
+		
+		console.log(espresso.name);
+		
+		console.log(espresso.getPrice());
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+
+	<script src="./common/calc_common.js"></script>
+	<script src="./chain/abstract_handler.js"></script>
+	<script src="./chain/abstract_operation_handler.js"></script>
+	<script src="./chain/request.js"></script>
+	<script src="./chain/add_operation_handler.js"></script>
+	<script src="./chain/multiply_operation_handler.js"></script>
+	<script src="./chain/substract_operation_handler.js"></script>
+	<script src="./chain/divide_operation_handler.js"></script>
+	<script src="./chain/operand_handler.js"></script>
+	<script src="./operand/abstract_operand.js"></script>
+	<script src="./operand/number_operand.js"></script>
+	<script src="./operand/funct/abstract_function_operand.js"></script>
+	<script src="./operand/funct/frac_function_operand.js"></script>
+	<script src="./operand/funct/percent_function_operand.js"></script>
+	<script src="./operand/funct/pow_function_operand.js"></script>
+	<script src="./operand/funct/sqrt_function_operand.js"></script>
+	<script src="./chain/client.js"></script>
+	<script src="./app/calc_constants.js"></script>
+	<script src="./app/calc_display_view.js"></script>
+	<script src="./app/calc_equation_view.js"></script>
+	<script src="./app/calc_main_frame.js"></script>
+	<script src="./app/input_panel.js"></script>
+	<script src="./app/calc_util.js"></script>
+	<script src="./model/calc_model.js"></script>
+	
+	<script>
+		window.onload = function() {
+			let calcMain = new CALC.app.CalcMainFrame("calculator");
+		};
+	</script>
+</head>
+<body>
+	<div id = "calculator"></div>
+</body>
+</html>

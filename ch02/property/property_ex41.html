@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {
+			name : "Americano", 
+			price : 3000
+		};
+
+		console.log("name" in coffee);
+		
+		console.log("price" in coffee);
+		
+		console.log("caffeine" in coffee);
+		
+		console.log(coffee.hasOwnProperty("price"));
+		
+		console.log("toString" in coffee);
+		
+		console.log(coffee.hasOwnProperty("toString"));
+	</script>
+</body>
+</html>

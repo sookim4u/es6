@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+
+	<script src="../common/calc_common.js"></script>
+	<script src="../struct/rectangle.js"></script>
+	<script src="./js/calc_model.js"></script>
+	<script src="./js/calc_view.js"></script>
+	<script src="./js/calc_controller.js"></script>
+	<script src="./js/calc_main.js"></script>
+	
+	<script>
+		window.onload = function() {
+			let calcMain = new CALC.mvc.CalcMain("calculator");
+		};
+	</script>
+</head>
+<body>
+	<div id = "calculator"></div>
+</body>
+</html>

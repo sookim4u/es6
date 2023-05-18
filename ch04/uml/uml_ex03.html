@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		class Espresso {
+			constructor() {
+				this.name = "Espresso";
+			}
+			
+			display() {
+				console.log(this.name);
+			}
+		}
+		
+		class Barista {
+			constructor() {
+				this.espressoMachine = null;
+			}
+			
+			setEspressoMachine(espressoMachine) {
+				this.espressoMachine = espressoMachine;
+			}
+			
+			makeEspresso() {
+				let espresso = this.espressoMachine.makeEspresso();
+				
+				return espresso;
+			}
+		}
+		
+		class EspressoMachine {
+			constructor() {
+				this.price = 300000;
+			}
+			
+			makeEspresso() {
+				return new Espresso();
+			}
+		}
+		
+		let barista = new Barista();
+		
+		let espressoMachine = new EspressoMachine();
+		
+		barista.setEspressoMachine(espressoMachine);
+		
+		let espresso = barista.makeEspresso();
+		
+		espresso.display();
+	</script>
+</body>
+</html>

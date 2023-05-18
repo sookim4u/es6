@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>command</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/abstract_operation_command.js"></script>
+	<script src="./js/operation_command_receiver.js"></script>
+	<script src="./js/add_operation_command.js"></script>
+	<script src="./js/multiply_operation_command.js"></script>
+	<script src="./js/substract_operation_command.js"></script>
+	<script src="./js/divide_operation_command.js"></script>
+	<script>
+		let command = CALC.command;
+	
+		let receiver = new command.OperationCommandReceiver();
+		
+		let result = receiver.getResult();
+		
+		console.log("result = " + result);
+
+		let addCommand = new command.AddOperationCommand(receiver, 20);
+		addCommand.execute();
+
+		result = receiver.getResult();
+		console.log("result + 20 = " + result);
+
+		let substractCommand = new command.SubstractOperationCommand(receiver, 10);
+		substractCommand.execute();
+
+		result = receiver.getResult();
+		console.log("result - 10 = " + result);
+
+		let multiplyCommand = new command.MultiplyOperationCommand(receiver, 10);
+		multiplyCommand.execute();
+
+		result = receiver.getResult();
+		console.log("result * 10 = " + result);
+
+		let divideCommand = new command.DivideOperationCommand(receiver, 10);
+		divideCommand.execute();
+
+		result = receiver.getResult();
+		console.log("result / 10 = " + result);
+	</script>
+</body>
+</html>

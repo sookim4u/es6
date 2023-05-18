@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		class Coffee {
+			constructor() {
+				this.name = "Coffee";
+			}
+		}
+	
+		let coffee = new Coffee();
+		
+		console.log(coffee instanceof Coffee);
+		
+		console.log(coffee instanceof Object);
+		
+		console.log(coffee instanceof Number);
+		
+		class Espresso extends Coffee {
+			constructor() {
+				super();
+				
+				this.name = "Espresso";
+			}
+		}
+		
+		let espresso = new Espresso();
+		
+		console.log(espresso instanceof Espresso);
+		console.log(espresso.constructor === Espresso);
+
+		console.log(espresso instanceof Coffee);
+		console.log(espresso.constructor === Coffee);
+		
+		console.log(espresso instanceof Object);
+		console.log(espresso.constructor === Object);
+		
+		console.log(espresso instanceof Number);
+		console.log(espresso.constructor === Number);
+		
+		if(espresso instanceof Espresso && espresso.constructor === Espresso) {
+			console.log("espresso는 Espresso 객체");
+		}
+	</script>
+</body>
+</html>

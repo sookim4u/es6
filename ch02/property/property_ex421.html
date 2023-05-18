@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {
+			name : "Americano", 
+			price : 3000
+		};
+		
+		let property;
+		
+		for(property in coffee) {
+			console.log(property + " : " + coffee[property]);
+		}
+	</script>
+</body>
+</html>

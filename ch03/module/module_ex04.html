@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let Coffee = (function() {
+			
+			let price = 3000;
+			
+			function Coffee(name) {
+				this.name = name;
+			}
+			
+			Coffee.prototype.getPrice = function() {
+				return price;
+			};
+			
+			Coffee.prototype.raisePrice = function() {
+				price += 100;
+			};
+			
+			return Coffee;
+		}());
+		
+		let coffee = new Coffee("Americano");
+		let espresso = new Coffee("Espresso");
+		
+		console.log(coffee.name);
+		console.log(coffee.getPrice());
+		
+		console.log(espresso.name);
+		console.log(coffee.getPrice());
+		
+		coffee.raisePrice();
+		console.log(coffee.getPrice());
+		console.log(espresso.getPrice());
+	</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		class CoffeeBeans {
+			constructor() {
+				this.countryOfOrigin = "Colombia";
+			}
+			
+			toString() {
+				return "CoffeeBeans [" + this.countryOfOrigin + "]";
+			}
+		}
+		
+		class Espresso {
+			constructor() {
+				this.name = "Espresso";
+			}
+			
+			toString() {
+				return "Espresso";
+			}
+		}
+		
+		class Milk {
+			constructor() {
+				this.name = "Milk";
+			}
+			
+			toString() {
+				return "Milk";
+			}
+		}
+		
+		class CafeLatte {
+			constructor() {
+				this.name = "CafeLatte";
+				
+				this.espresso = null;
+				this.milk = null;
+			}
+			
+			setEspresso(espresso) {
+				this.espresso = espresso;
+			}
+			
+			setMilk(milk) {
+				this.milk = milk;
+			}
+			
+			display() {
+				console.log(this.name + " (" + this.espresso + " + " + this.milk + ")");
+			}
+		}
+		
+		class Barista {
+			constructor() {
+				this.espressoMachine = null;
+			}
+			
+			setEspressoMachine(espressoMachine) {
+				this.espressoMachine = espressoMachine;
+			}
+			
+			makeEspresso() {
+				let coffeeBeans = new CoffeeBeans();
+				
+				let espresso = this.espressoMachine.makeEspresso(coffeeBeans);
+				
+				return espresso;
+			}
+			
+			makeCafeLatte() {
+				let coffeeBeans = new CoffeeBeans();
+				
+				let espresso = this.espressoMachine.makeEspresso(coffeeBeans);
+				let milk = new Milk();
+				
+				let cafeLatte = new CafeLatte();
+				
+				cafeLatte.setEspresso(espresso);
+				cafeLatte.setMilk(milk);
+				
+				return cafeLatte;
+			}
+		}
+		
+		class EspressoMachine {
+			constructor() {
+				this.price = 300000;
+			}
+			
+			makeEspresso(coffeeBeans) {
+				console.log("" + coffeeBeans);
+				
+				return new Espresso();
+			}
+		}
+	
+		let barista = new Barista();
+		
+		let espressoMachine = new EspressoMachine();
+		
+		barista.setEspressoMachine(espressoMachine);
+		
+		let cafeLatte = barista.makeCafeLatte();
+		
+		cafeLatte.display();
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {};
+		
+		Object.defineProperty(coffee, "name", {
+			value: "Americano",
+			enumerable: true,
+			configurable: true,
+			writable: true
+		});
+		
+		console.log(coffee.propertyIsEnumerable("name"));
+		
+		let property;
+		
+		for(property in coffee) {
+			console.log(property + " : " + coffee[property]);
+		}
+		
+		Object.defineProperty(coffee, "name", {
+			enumerable: false
+		});
+		
+		console.log(coffee.propertyIsEnumerable("name"));
+		
+		for(property in coffee) {
+			console.log(property + " : " + coffee[property]);
+		}
+	</script>
+</body>
+</html>

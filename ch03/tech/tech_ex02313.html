@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		function Coffee() {
+			this.name = "Americano";
+			this.price = 3000;
+		}
+		
+		Coffee.prototype.getName = function() {
+			return this.name;
+		};
+	
+		let coffee = new Coffee();
+		
+		console.log("variableName : coffee");
+		console.log(coffee);
+		
+		console.log(coffee instanceof Object);
+		
+		console.log(coffee instanceof Coffee);
+		
+		console.log(coffee instanceof Date);
+	</script>
+</body>
+</html>

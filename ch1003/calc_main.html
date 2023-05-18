@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+
+	<script src="./common/calc_common.js"></script>
+	<script src="./chain/abstract_handler.js"></script>
+	<script src="./chain/abstract_operation_handler.js"></script>
+	<script src="./chain/request.js"></script>
+	<script src="./chain/add_operation_handler.js"></script>
+	<script src="./chain/multiply_operation_handler.js"></script>
+	<script src="./chain/substract_operation_handler.js"></script>
+	<script src="./chain/divide_operation_handler.js"></script>
+	<script src="./chain/operand_handler.js"></script>
+	<script src="./operand/abstract_operand.js"></script>
+	<script src="./operand/number_operand.js"></script>
+	<script src="./operand/funct/abstract_function_operand.js"></script>
+	<script src="./operand/funct/frac_function_operand.js"></script>
+	<script src="./operand/funct/percent_function_operand.js"></script>
+	<script src="./operand/funct/pow_function_operand.js"></script>
+	<script src="./operand/funct/sqrt_function_operand.js"></script>
+	<script src="./chain/client.js"></script>
+	
+	<script>
+		let client = new CALC.chain.Client();
+		client.main();
+	</script>
+</head>
+<body>
+	<div id = "calculator"></div>
+</body>
+</html>

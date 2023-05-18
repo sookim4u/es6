@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = (function() {
+			let price = 3000;
+			
+			return {
+				name : "Americano",
+				
+				getPrice : function() {
+					return price;
+				},
+				
+				raisePrice : function() {
+					price += 100;
+				}
+			}
+		}());
+		
+		console.log(coffee.name);
+		
+		console.log(coffee.getPrice());
+		
+		coffee.price = 4000;
+		console.log(coffee.getPrice());
+		
+		console.log(coffee);
+		
+		console.log(coffee.price);
+		
+		coffee.raisePrice();
+		console.log(coffee.getPrice());
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>visitor</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/abstract_visitor.js"></script>
+	<script src="./js/set_value_to_variable_visitor.js"></script>
+	<script src="./js/calculator.js"></script>
+	<script src="./js/expression/abstract_expression.js"></script>
+	<script src="./js/expression/abstract_operation_expression.js"></script>
+	<script src="./js/expression/add_operation_expression.js"></script>
+	<script src="./js/expression/divide_operation_expression.js"></script>
+	<script src="./js/expression/multiply_operation_expression.js"></script>
+	<script src="./js/expression/substract_operation_expression.js"></script>
+	<script src="./js/expression/number_expression.js"></script>
+	<script src="./js/expression/variable_expression.js"></script>
+	<script>
+		let visitor = CALC.visitor;
+		
+		let calculator = new visitor.Calculator();
+	
+		let firstNumber = 100;		
+		let firstNumberEquation = new visitor.expression.NumberExpression(firstNumber);
+	
+		let secondNumberEquation = new visitor.expression.VariableExpression("ABC");
+		
+		let addOperationExpression = new visitor.expression.AddOperationExpression();
+		addOperationExpression.addOperandExpression(firstNumberEquation);
+		addOperationExpression.addOperandExpression(secondNumberEquation);
+		
+		calculator.setExpression(addOperationExpression);
+		
+		let variableName = "ABC";
+		let value = 80;
+		
+		console.log("ABC = " + value);
+	
+		calculator.addVariableToValue(variableName, value);
+				
+		console.log("100 + ABC = " + calculator.calculate());
+	</script>
+</body>
+</html>

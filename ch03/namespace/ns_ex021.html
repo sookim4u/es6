@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		var MYPAINTER = {};
+		
+		MYPAINTER.app = {};
+		MYPAINTER.model = {};
+		MYPAINTER.view = {};
+		MYPAINTER.control = {};
+		
+		MYPAINTER.app.Constants = function() {};
+		MYPAINTER.app.Main = function() {};
+		MYPAINTER.model.Model = function() {};
+		MYPAINTER.view.View = function() {};
+		MYPAINTER.control.Controller = function() {};
+		
+		MYPAINTER.app.Constants.TITLE = "Painter";
+		MYPAINTER.app.Constants.WIDTH = 600;
+		MYPAINTER.app.Constants.HEIGHT = 400;
+		
+		console.log(MYPAINTER.app.Constants.TITLE);
+		console.log(MYPAINTER.app.Constants.WIDTH);
+		console.log(MYPAINTER.app.Constants.HEIGHT);
+		
+		if(typeof MYPAINTER === "undefined") {
+			var MYPAINTER = {};
+		}
+		
+		console.log(MYPAINTER.app);
+		
+		console.log(MYPAINTER.app.Constants.TITLE);
+		console.log(MYPAINTER.app.Constants.WIDTH);
+		console.log(MYPAINTER.app.Constants.HEIGHT);
+	</script>
+</body>
+</html>

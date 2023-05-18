@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		var MYPAINTER = {};
+		
+		MYPAINTER.createNameSpace = function(nsValue) {
+			var parts = nsValue.split('.');
+			var parent = MYPAINTER;
+			
+			if(parts[0] === "MYPAINTER") {
+				parts = parts.slice(1);
+			}
+			
+			for(let i = 0; i < parts.length; i++) {
+				if(typeof parent[parts[i]] === "undefined") {
+					parent[parts[i]] = {};
+				}
+				
+				parent = parent[parts[i]];
+			}
+			
+			return parent;
+		}
+		
+		MYPAINTER.app = MYPAINTER.createNameSpace("MYPAINTER.app");
+		MYPAINTER.model = MYPAINTER.createNameSpace("MYPAINTER.model");
+		MYPAINTER.view = MYPAINTER.createNameSpace("MYPAINTER.view");
+		MYPAINTER.control = MYPAINTER.createNameSpace("MYPAINTER.control");
+		
+		MYPAINTER.app.Constants = function() {};
+		MYPAINTER.app.Main = function() {
+	
+			this.main = function() {
+				var constants = MYPAINTER.app.Constants;
+				
+				console.log("main");
+				
+				console.log(constants.TITLE);
+				console.log(constants.WIDTH);
+				console.log(constants.HEIGHT);
+			};
+		};
+		MYPAINTER.model.Model = function() {};
+		MYPAINTER.view.View = function() {};
+		MYPAINTER.control.Controller = function() {};
+		
+		MYPAINTER.app.Constants.TITLE = "Painter";
+		MYPAINTER.app.Constants.WIDTH = 600;
+		MYPAINTER.app.Constants.HEIGHT = 400;
+		
+		let painterMain = new MYPAINTER.app.Main();
+		
+		painterMain.main();
+	</script>
+</body>
+</html>

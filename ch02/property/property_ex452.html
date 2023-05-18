@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {};
+		
+		Object.defineProperty(coffee, "name", {
+			value: "Americano",
+			enumerable: true,
+			configurable: true,
+			writable: true
+		});
+		
+		console.log(coffee.name);
+		
+		coffee.name = "Espresso";
+		
+		console.log(coffee.name);
+		
+		Object.defineProperty(coffee, "name", {
+			configurable: false
+		});
+		
+		coffee.name = "Cappuccino";
+		
+		console.log(coffee.name);
+		
+		delete coffee.name;
+		
+		console.log("name" in coffee);
+		
+		console.log(coffee.name);
+		
+		Object.defineProperty(coffee, "name", {
+			configurable: true
+		});
+	</script>
+</body>
+</html>

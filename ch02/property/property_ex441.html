@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {
+			name : "Americano"
+		};
+		
+		console.log("name" in coffee);
+		
+		console.log(coffee.propertyIsEnumerable("name"));
+		
+		coffee.name = "Cappuccino";
+		console.log(coffee.name);
+		
+		delete coffee.name;
+		console.log("name" in coffee);
+	</script>
+</body>
+</html>

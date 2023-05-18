@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let answer = (function(operator, firstNumber, secondNumber) {
+			if(operator === "+") {
+				return firstNumber + secondNumber;
+			}
+			else if(operator === "-") {
+				return firstNumber - secondNumber;
+			}
+			else if(operator === "*") {
+				return firstNumber * secondNumber;
+			}
+			else if(operator === "/") {
+				return firstNumber / secondNumber;
+			}
+		
+			return 0;
+		}("+", 100, 20));
+		
+		console.log("answer = " + answer);
+	</script>
+</body>
+</html>

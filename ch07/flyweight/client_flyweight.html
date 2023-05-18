@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flyweight</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/font_info.js"></script>
+	<script src="./js/flyweight_constants.js"></script>
+	<script src="./js/print_answer.js"></script>
+	<script src="./js/text_style_flyweight_factory.js"></script>
+	<script src="./js/text_style_flyweight.js"></script>
+	<script src="./js/client.js"></script>
+	
+	<script>
+		let flyweight = CALC.flyweight;
+		
+		let client = new flyweight.Client();
+		
+		client.setupTextStyleFlyweightFactory();
+		
+		let printAnswer = new flyweight.PrintAnswer();
+		
+		printAnswer.setFirstNumber(10);
+		printAnswer.setSecondNumber(20);
+		
+		printAnswer.printResult();
+	</script>
+</body>
+</html>

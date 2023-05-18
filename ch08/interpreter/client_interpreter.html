@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>interpreter</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/calc_context.js"></script>
+	<script src="./js/calc_token.js"></script>
+	<script src="./js/calc_tokenizer.js"></script>
+	<script src="./js/expression/abstract_expression.js"></script>
+	<script src="./js/expression/abstract_function_expression.js"></script>
+	<script src="./js/expression/abstract_operation_expression.js"></script>
+	<script src="./js/expression/calc_expression_factory.js"></script>
+	<script src="./js/expression/add_operation_expression.js"></script>
+	<script src="./js/expression/divide_operation_expression.js"></script>
+	<script src="./js/expression/multiply_operation_expression.js"></script>
+	<script src="./js/expression/substract_operation_expression.js"></script>
+	<script src="./js/expression/number_expression.js"></script>
+	<script src="./js/expression/decorator/abstract_decorator_expression.js"></script>
+	<script src="./js/expression/decorator/frac_decorator_expression.js"></script>
+	<script src="./js/expression/decorator/pow_decorator_expression.js"></script>
+	<script src="./js/expression/decorator/sqrt_decorator_expression.js"></script>
+	<script>
+		let interpreter = CALC.interpreter;
+		
+		let text = "ADD(2,12)";
+		
+		let calcContext = new interpreter.CalcContext(text);
+	
+		try {
+			
+			let result = 0;
+			
+			let currentToken = calcContext.getCurrentTokenAndGoToNext();
+			
+			let expression = interpreter.expression.CalcExpressionFactory.createExpression(currentToken);
+			
+			if (expression != null) {
+				expression.parse(calcContext);
+	
+				result = expression.operate();
+			}
+	
+			console.log(text + " = " + result);
+	
+		} catch (e) {
+	
+			console.log(e);
+		}		
+	</script>
+</body>
+</html>

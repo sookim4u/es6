@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let name = "Cappuccino";
+		let price = 3000;
+		let ratio = 0.5;
+		let isNew = false;
+		
+		let val;
+		let nullVal = null;
+		
+		let obj = {};
+		
+		let add = function(a, b) {
+			return a + b;
+		};
+		
+		function Coffee() {
+			this.name = "Americano";
+			this.price = 3000;
+		}
+	
+		let coffee = new Coffee();
+		
+		console.log(name);
+		console.log(typeof name);
+		
+		console.log(price);
+		console.log(typeof price);
+		
+		console.log(ratio);
+		console.log(typeof ratio);
+		
+		console.log(isNew);
+		console.log(typeof isNew);
+		
+		console.log(val);
+		console.log(typeof val);
+		
+		console.log(nullVal);
+		console.log(typeof nullVal);
+		
+		console.log(obj);
+		console.log(typeof obj);
+		
+		console.log(add(100, 20));
+		console.log(typeof add);
+		
+		console.log(typeof Coffee);
+		
+		console.log(typeof coffee);
+	</script>
+</body>
+</html>

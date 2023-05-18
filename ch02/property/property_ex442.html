@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {};
+		
+		Object.defineProperty(coffee, "name", {
+			value: "Americano"
+		});
+		
+		console.log("name" in coffee);
+		
+		console.log(coffee.propertyIsEnumerable("name"));
+		
+		delete coffee.name;
+		console.log("name" in coffee);
+		
+		coffee.name = "Cappuccino";
+		console.log(coffee.name);
+	</script>
+</body>
+</html>

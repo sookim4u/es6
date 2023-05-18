@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		function Coffee() {
+			this.name = "Americano";
+			this.price = 3000;
+		}
+		
+		Coffee.prototype.getName = function() {
+			return this.name;
+		};
+	
+		let coffee = new Coffee();
+		
+		console.log("variableName : coffee");
+		console.log(coffee);
+		
+		console.log(typeof coffee);
+		
+		if(typeof coffee == "object") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		if(typeof coffee === "object") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+	</script>
+</body>
+</html>

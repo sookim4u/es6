@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Graph</title>
+	
+	<script src="./common/graph_common.js"></script>
+	<script src="./app/graph_constants.js"></script>
+	<script src="./calc/interpreter/calc_context.js"></script>
+	<script src="./calc/interpreter/calc_token.js"></script>
+	<script src="./calc/interpreter/calc_tokenizer.js"></script>
+	<script src="./calc/interpreter/expression/abstract_expression.js"></script>
+	<script src="./calc/interpreter/expression/abstract_function_expression.js"></script>
+	<script src="./calc/interpreter/expression/abstract_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/calc_expression_factory.js"></script>
+	<script src="./calc/interpreter/expression/add_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/divide_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/multiply_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/substract_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/number_expression.js"></script>
+	<script src="./calc/interpreter/expression/variable_expression.js"></script>
+	<script src="./calc/interpreter/expression/decorator/abstract_decorator_expression.js"></script>
+	<script src="./calc/interpreter/expression/decorator/frac_decorator_expression.js"></script>
+	<script src="./calc/interpreter/expression/decorator/pow_decorator_expression.js"></script>
+	<script src="./calc/interpreter/expression/decorator/sqrt_decorator_expression.js"></script>
+	<script src="./calc/visitor/abstract_visitor.js"></script>
+	<script src="./calc/visitor/set_value_to_variable_visitor.js"></script>
+	<script src="./calc/calculator.js"></script>
+	<script src="./calc/client.js"></script>
+	<script src="./app/graph_main.js"></script>
+	<script src="./app/graph_util.js"></script>
+	<script src="./struct/graph_point.js"></script>
+	<script src="./model/graph_model.js"></script>
+	<script src="./view/graph_view.js"></script>
+	<script src="./view/panel/toolbar_panel.js"></script>
+	<script src="./controller/graph_controller.js"></script>
+	
+	<script>
+		window.onload = function() {
+			let graphMain = new GRAPH.app.GraphMain("graph");
+		};
+	</script>	
+</head>
+<body>
+	<div id = "graph"></div>
+</body>
+</html>

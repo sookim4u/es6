@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {
+			name : "Americano"
+		};
+		
+		coffee.getName = function() {
+			return this.name;
+		}
+		
+		coffee.setName = function(name) {
+			this.name = name;
+		};
+		
+		coffee.display = function() {
+			console.log(this.name);
+		};
+		
+		console.log(coffee.getName());
+		
+		coffee.setName("Cappuccino"); 
+		
+		console.log(coffee.getName());
+		
+		coffee.display();
+	</script>
+</body>
+</html>

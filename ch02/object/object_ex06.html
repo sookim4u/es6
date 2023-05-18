@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		let coffee = {
+			_name : "Americano",
+			get name() {
+				console.log("call getter");
+				return this._name;
+			},
+			set name(value) {
+				console.log("call setter");
+				this._name = value;
+			}
+		};
+		
+		console.log(coffee.name); 
+		
+		console.log(coffee._name); 
+		
+		coffee.name = "Cappuccino"; 
+		
+		console.log(coffee.name);
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Graph</title>
+	
+	<script src="./common/graph_common.js"></script>
+	<script src="./calc/interpreter/calc_context.js"></script>
+	<script src="./calc/interpreter/calc_token.js"></script>
+	<script src="./calc/interpreter/calc_tokenizer.js"></script>
+	<script src="./calc/interpreter/expression/abstract_expression.js"></script>
+	<script src="./calc/interpreter/expression/abstract_function_expression.js"></script>
+	<script src="./calc/interpreter/expression/abstract_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/calc_expression_factory.js"></script>
+	<script src="./calc/interpreter/expression/add_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/divide_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/multiply_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/substract_operation_expression.js"></script>
+	<script src="./calc/interpreter/expression/number_expression.js"></script>
+	<script src="./calc/client.js"></script>
+	
+	<script>
+		let client = new GRAPH.calc.Client();
+		client.main();
+	</script>	
+</head>
+<body>
+	<div id = "graph"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		class ICoffee {
+			constructor() {
+				
+			}
+			
+			getName() {
+				throw new Error('You have to implement the method doSomething!');
+			}
+			
+			setName(name) {
+				throw new Error('You have to implement the method doSomething!');
+			}
+			
+			display() {
+				throw new Error('You have to implement the method doSomething!');
+			}
+		}
+		
+		class Espresso extends ICoffee {
+			constructor() {
+				super();
+				
+				this.name = "Espresso";
+			}
+			
+			getName() {
+				return this.name;
+			}
+			
+			setName(name) {
+				this.name = name;
+			}
+			
+			display() {
+				console.log(this.name);
+			}
+		}
+		
+		let espresso = new Espresso();
+		
+		console.log(espresso.name);
+		
+		console.log(espresso.getName());
+		
+		espresso.display();
+	</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+<body>
+	<script>
+		function Coffee() {
+			this.name = "Americano";
+			this.price = 3000;
+		}
+		
+		Coffee.prototype.getName = function() {
+			return this.name;
+		};
+	
+		let coffee = new Coffee();
+		
+		console.log("variableName : coffee");
+		console.log(coffee);
+		
+		if(coffee) {
+			console.log("true");
+		}
+		else {
+			console.log("false");
+		}
+		
+		console.log("coffee == {}");
+		if(coffee == {}) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == null");
+		if(coffee == null) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == undefined");
+		if(coffee == undefined) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == \"undefined\"");
+		if(coffee == "undefined") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == true");
+		if(coffee == true) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == \"true\"");
+		if(coffee == "true") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == false");
+		if(coffee == false) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == \"false\"");
+		if(coffee == "false") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == 0");
+		if(coffee == 0) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+		
+		console.log("coffee == \"0\"");
+		if(coffee == "0") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+			
+		console.log("coffee == \"1\"");
+		if(coffee == "1") {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+	
+		console.log("coffee == true");
+		if(coffee == true) {
+			console.log("equal");
+		}
+		else {
+			console.log("not equal");
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>templatemethod</title>
+</head>
+<body>
+	<script src="../common/js/calc_common.js"></script>
+	<script src="./js/abstract_operation.js"></script>
+	<script src="./js/add_operation.js"></script>
+	<script src="./js/divide_operation.js"></script>
+	<script src="./js/multiply_operation.js"></script>
+	<script src="./js/substract_operation.js"></script>
+	<script>
+		let templatemethod = CALC.templatemethod;
+		
+		let firstNumber = 100;
+		let secondNumber = 20;
+	
+		const operations = [ 
+				new templatemethod.AddOperation(),
+				new templatemethod.SubstractOperation(), 
+				new templatemethod.MultiplyOperation(),
+				new templatemethod.DivideOperation() ];
+	
+		for (let operation of operations) {
+			operation.setFirstNumber(firstNumber);
+			operation.setSecondNumber(secondNumber);
+	
+			operation.operate();
+		}
+	</script>
+</body>
+</html>
